@@ -20,7 +20,10 @@ const stationboard = {
             this.trains = data.stationboard;
         },
 
-        timestampToTime(timestamp) { }
+        timestampToTime(timestamp) {
+            const date = new Date(timestamp);
+            return date.toLocaleTimeString("de-CH");
+         }
     }
 };
 
