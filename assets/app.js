@@ -1,7 +1,27 @@
 "use strict"
 // opendata api URL
-const url = `https://transport.opendata.ch/v1/stationboard?station=${station}`;
 
-const getData = async () => {};
+const stationboard = {
+    data() {
+        return {
+            station: "",
+            stationName: "",
+            trains: []
+        };
+    },
+    methods: {
+        async loadConnections() {
+            const url = `https://transport.opendata.ch/v1/stationboard?station=${this.station}`;
+            const response = await fetch(url);
+            const data = await response.json();
+            
+            this.stationName = data.station.name;
+            this.trains = data.stationboard;
+        },
 
-const displayData = (data) => {};
+        timestampToTime(timestamp) { }
+    }
+};
+
+const app = Vue.createApp(stationboard);
+app.mount('#app');

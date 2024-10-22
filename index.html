@@ -6,12 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stationboard</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="/assets/app.js" defer></script>
     <link rel="stylesheet" href="/assets/style.css">
 </head>
 
 <body>
-    <div class="table-fixed-head">
+    <div id="app" class="table-fixed-head">
 
         <table id="time-table">
             <tbody id="table-body">
@@ -25,7 +26,7 @@
                 </tr>
             </thead>
             <caption>
-                <h1>Stationboard <span id="stationname"></span></h1>
+                <h1>Stationboard {{ stationname }}</h1>
                 <input type="text" id="station" />
                 <button>ok</button>
             </caption>
