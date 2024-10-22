@@ -26,9 +26,9 @@
                 </tr>
             </thead>
             <caption>
-                <h1>Stationboard {{ stationname }}</h1>
-                <input type="text" id="station" />
-                <button>ok</button>
+                <h1>Stationboard {{ stationName }}</h1>
+                <input type="text" id="station" v-model="station"/>
+                <button v-on:click="loadConnections">ok</button>
             </caption>
         </table>
 
